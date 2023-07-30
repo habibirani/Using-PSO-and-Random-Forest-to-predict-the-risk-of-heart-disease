@@ -1,0 +1,25 @@
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+random_forest_accuracy = 0.85
+deep_learning_accuracy = 0.78
+
+# Create a bar plot
+models = ['Random Forest with PSO', 'Deep Learning with Keras']
+accuracies = [random_forest_accuracy, deep_learning_accuracy]
+
+plt.bar(models, accuracies, color=['blue', 'green'])
+plt.xlabel('Model')
+plt.ylabel('Accuracy')
+plt.ylim(0.6, 1.0)  # Set the y-axis limit to better visualize the differences
+plt.title('Comparison of Model Accuracies')
+plt.tight_layout()
+plt.show()
+
+# Create a heatmap using Seaborn
+plt.figure(figsize=(8, 6))
+sns.heatmap(accuracies, annot=True, fmt=".2f", cmap="YlGnBu", xticklabels=model_names, yticklabels=False)
+plt.xlabel('Model')
+plt.ylabel('Accuracy')
+plt.title('Comparison of Model Accuracies')
+plt.show()
